@@ -28,13 +28,14 @@ public class RentCarsTest {
     public static void main(String[] args) throws MalformedURLException, IOException {
 
         List<Vehicle> vehicleList = getArrayListFromJson();
- //      printListAscendingPrice(vehicleList);
-//        System.out.println("\n");
- //      printSpecification(vehicleList);
-vehicleList.sort(Comparator.comparing(Vehicle::getName));
-vehicleList.forEach((veh) -> {
-    System.out.println(String.format("%-24s%-15s%-15s% 8.1f", veh.getName(), decodeSipp(veh.getSipp(), 0)
-            ,veh.getSupplier(),veh.getRating()));
+        printListAscendingPrice(vehicleList);
+        System.out.println("\n");
+        printSpecification(vehicleList);
+        System.out.println("\n");
+        vehicleList.sort(Comparator.comparing(Vehicle::getName));
+        vehicleList.forEach((veh) -> {
+            System.out.println(String.format("%-24s%-15s%-15s% 8.1f", veh.getName(), decodeSipp(veh.getSipp(), 0),
+                     veh.getSupplier(), veh.getRating()));
         });
     }
 
